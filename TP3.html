@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP3 HTML-CSS</title>
     <style>
+        /*TP3*/
         body { font-family: Arial, sans-serif; margin: 20px; }
         h1 { color: black; font-weight: bold; font-size: 2em; }
         h2 { color: black; font-weight: bold; font-size: 1.75em; }
@@ -15,6 +16,66 @@
         .content { display: none; }
         button { margin: 5px; padding: 10px; cursor: pointer; font-weight: bold; }
         mark { background-color: yellow; font-weight: bold; }
+     /*En tete  */
+     a{
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper{
+    margin: 0 auto;
+    margin-right: 200px;
+    width: 1000px;
+}
+.logo{
+    position: fixed;
+    height: auto;
+    left: 0px;
+    top: -80px;
+    width: 350px;
+
+}
+header{
+    height: 100px;
+    border-bottom: 1px solid black;
+    background: linear-gradient(90deg,#858585,#0E1300)
+}
+
+header li{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+header li a{
+    display: block;
+    padding: 40px;
+    padding-right: 70px;
+}
+header li:hover a{
+    background-color: white;
+    color: red;
+}
+header li:hover .sous_menu{
+    display: block;
+}
+.sous_menu{
+    display: none;
+    position: absolute;
+    background-color: red;
+    width: 165px;
+}
+.sous_menu li{
+    display: block;
+}
+
+.sous_menu li:hover a{
+    background-color: red;
+    color: white;
+}
+
+main.wrapper{
+    margin-top: 30px;
+}
     </style>
     <script>
         function showContent(id) {
@@ -24,6 +85,20 @@
     </script>
 </head>
 <body>
+    <header>
+        <ul>
+            <li> 
+                <a href="TP_WEB.html" title="Acceuil">Acceuil</a></li>
+            <li> 
+                <a href="TP3.html" title="TP3">TP3</a> </li>
+            <li> 
+                <a href="" title="TP4">TP4</a> </li>
+            <li> 
+                <a href=" " title="TP5">TP5</a></li>
+            
+        </ul>
+    </nav>
+    </header>
     <div class="container">
         <h1>TP3 - HTML & CSS</h1>
         
