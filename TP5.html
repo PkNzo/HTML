@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeu du Memory</title>
      <style>
-*{
+
+        *{
     box-sizing: border-box;
 }
 
@@ -16,6 +17,67 @@ body{
     font-size: 16px;
     line-height: 22px;
 }
+/* En-tete*/
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper{
+    margin: 0 auto;
+    margin-right: 200px;
+    width: 1000px;
+}
+.logo{
+    position: fixed;
+    height: auto;
+    left: 0px;
+    top: -80px;
+    width: 350px;
+
+}
+header{
+    height: 100px;
+    border-bottom: 1px solid black;
+    background: linear-gradient(90deg,#858585,#0E1300)
+}
+
+header li{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+header li a{
+    display: block;
+    padding: 40px;
+    padding-right: 70px;
+}
+header li:hover a{
+    background-color: white;
+    color: red;
+}
+header li:hover .sous_menu{
+    display: block;
+}
+.sous_menu{
+    display: none;
+    position: absolute;
+    background-color: red;
+    width: 165px;
+}
+.sous_menu li{
+    display: block;
+}
+
+.sous_menu li:hover a{
+    background-color: red;
+    color: white;
+}
+
+main.wrapper{
+    margin-top: 30px;
+}
+
 
 html, body {
       width: 100%;
@@ -108,6 +170,22 @@ html, body {
      </style>
 </head>
 <body>
+    <header>
+        <ul>
+            <li> 
+                <a href="index.html" title="Acceuil">Acceuil</a></li>
+            <li> 
+                <a href="TP3.html" title="TP3">TP3</a> </li>
+            <li> 
+                <a href="TP4.html" title="TP4">TP4</a> </li>
+            <li> 
+                <a href="TP5.html" title="TP5">TP5</a></li>
+            <li> 
+                <a href="TP6.html" title="TP6">TP6</a></li>
+                
+            
+        </ul>
+</header>
     <h1>Jeu du Memory</h1>
     <button onclick="restartGame()">Recommencer</button>
     <div class="game-container" id="game-board"></div>
