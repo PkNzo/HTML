@@ -16,68 +16,8 @@ body{
     font-size: 16px;
     line-height: 22px;
 }
-/* En-tete*/
-a{
-    text-decoration: none;
-    color: white;
-}
 
-.wrapper{
-    margin: 0 auto;
-    margin-right: 200px;
-    width: 1000px;
-}
-.logo{
-    position: fixed;
-    height: auto;
-    left: 0px;
-    top: -80px;
-    width: 350px;
-
-}
-header{
-    height: 100px;
-    border-bottom: 1px solid black;
-    background: linear-gradient(90deg,#858585,#0E1300)
-}
-
-header li{
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-}
-header li a{
-    display: block;
-    padding: 40px;
-    padding-right: 70px;
-}
-header li:hover a{
-    background-color: white;
-    color: red;
-}
-header li:hover .sous_menu{
-    display: block;
-}
-.sous_menu{
-    display: none;
-    position: absolute;
-    background-color: red;
-    width: 165px;
-}
-.sous_menu li{
-    display: block;
-}
-
-.sous_menu li:hover a{
-    background-color: red;
-    color: white;
-}
-
-main.wrapper{
-    margin-top: 30px;
-}
- /* Mise en forme générale et responsive */
- html, body {
+html, body {
       width: 100%;
       height: 100%;
       display: flex;
@@ -111,7 +51,7 @@ main.wrapper{
 
     .game-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 15px;
       margin-top: 20px;
       padding: 20px;
@@ -120,8 +60,8 @@ main.wrapper{
     }
 
     .card {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       perspective: 1000px;
       cursor: pointer;
     }
@@ -167,113 +107,96 @@ main.wrapper{
     }
      </style>
 </head>
-    <body>
-        <header>
-                <ul>
-                    <li> 
-                        <a href="index.html" title="Acceuil">Acceuil</a></li>
-                    <li> 
-                        <a href="TP3.html" title="TP3">TP3</a> </li>
-                    <li> 
-                        <a href="TP4.html" title="TP4">TP4</a> </li>
-                    <li> 
-                        <a href="TP5.html" title="TP5">TP5</a></li>
-                    <li> 
-                        <a href="TP6.html" title="TP6">TP6</a></li>
-                        
-                    
-                </ul>
-        </header>
-        <h1>Jeu du Memory</h1>
-        <button onclick="restartGame()">Recommencer</button>
-        <div class="game-container" id="game-board"></div>
-      
-        <script>
-          let firstCard, secondCard, lockBoard = false, matchedPairs = 0;
-      
-          function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              [array[i], array[j]] = [array[j], array[i]];
-            }
-          }
-      
-          function generateCards() {
-            const board = document.getElementById("game-board");
-            board.innerHTML = "";
-            const images = [];
-            for (let i = 1; i <= 8; i++) {
-              images.push({ id: i, src: `Images/img${i}.png` });
-              images.push({ id: i, src: `Images/img${i}.png` });
-            }
-            shuffle(images);
-            images.forEach(img => {
-              const card = document.createElement("div");
-              card.classList.add("card");
-              card.dataset.id = img.id;
-              card.onclick = () => revealCard(card);
-      
-              const cardInner = document.createElement("div");
-              cardInner.classList.add("card-inner");
-      
-              const cardFront = document.createElement("div");
-              cardFront.classList.add("card-face", "front");
-              cardFront.textContent = "?";
-      
-              const cardBack = document.createElement("div");
-              cardBack.classList.add("card-face", "back");
-              const image = document.createElement("img");
-              image.src = img.src;
-              image.style.width = "100%";
-              image.style.height = "100%";
-              cardBack.appendChild(image);
-      
-              cardInner.appendChild(cardFront);
-              cardInner.appendChild(cardBack);
-              card.appendChild(cardInner);
-              board.appendChild(card);
-            });
-          }
-      
-          function revealCard(card) {
-            if (lockBoard || card === firstCard || card.classList.contains("revealed")) return;
-            card.classList.add("revealed");
-            if (!firstCard) {
-              firstCard = card;
-              return;
-            }
-            secondCard = card;
-            lockBoard = true;
-            checkForMatch();
-          }
-      
-          function checkForMatch() {
-            if (firstCard.dataset.id === secondCard.dataset.id) {
-              firstCard.classList.add("matched");
-              secondCard.classList.add("matched");
-              matchedPairs++;
-              if (matchedPairs === 8) setTimeout(() => alert("Bravo ! Vous avez gagné !"), 500);
-              resetBoard();
-            } else {
-              setTimeout(() => {
-                firstCard.classList.remove("revealed");
-                secondCard.classList.remove("revealed");
-                resetBoard();
-              }, 1000);
-            }
-          }
-      
-          function resetBoard() {
-            [firstCard, secondCard, lockBoard] = [null, null, false];
-          }
-      
-          function restartGame() {
-            matchedPairs = 0;
-            generateCards();
-          }
-      
-          document.addEventListener("DOMContentLoaded", generateCards);
-        </script>
-      </body>
-
+<body>
+    <h1>Jeu du Memory</h1>
+    <button onclick="restartGame()">Recommencer</button>
+    <div class="game-container" id="game-board"></div>
+  
+    <script>
+      let firstCard, secondCard, lockBoard = false, matchedPairs = 0;
+  
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+  
+      function generateCards() {
+        const board = document.getElementById("game-board");
+        board.innerHTML = "";
+        const images = [];
+        for (let i = 1; i <= 10; i++) {
+          images.push({ id: i, src: `Images/img${i}.png` });
+          images.push({ id: i, src: `Images/img${i}.png` });
+        }
+        shuffle(images);
+        images.forEach(img => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.dataset.id = img.id;
+          card.onclick = () => revealCard(card);
+  
+          const cardInner = document.createElement("div");
+          cardInner.classList.add("card-inner");
+  
+          const cardFront = document.createElement("div");
+          cardFront.classList.add("card-face", "front");
+          cardFront.textContent = "?";
+  
+          const cardBack = document.createElement("div");
+          cardBack.classList.add("card-face", "back");
+          const image = document.createElement("img");
+          image.src = img.src;
+          image.style.width = "100%";
+          image.style.height = "100%";
+          cardBack.appendChild(image);
+  
+          cardInner.appendChild(cardFront);
+          cardInner.appendChild(cardBack);
+          card.appendChild(cardInner);
+          board.appendChild(card);
+        });
+      }
+  
+      function revealCard(card) {
+        if (lockBoard || card === firstCard || card.classList.contains("revealed")) return;
+        card.classList.add("revealed");
+        if (!firstCard) {
+          firstCard = card;
+          return;
+        }
+        secondCard = card;
+        lockBoard = true;
+        checkForMatch();
+      }
+  
+      function checkForMatch() {
+        if (firstCard.dataset.id === secondCard.dataset.id) {
+          firstCard.classList.add("matched");
+          secondCard.classList.add("matched");
+          matchedPairs++;
+          if (matchedPairs === 10) setTimeout(() => alert("Bravo ! Vous avez gagné !"), 500);
+          resetBoard();
+        } else {
+          setTimeout(() => {
+            firstCard.classList.remove("revealed");
+            secondCard.classList.remove("revealed");
+            resetBoard();
+          }, 1000);
+        }
+      }
+  
+      function resetBoard() {
+        [firstCard, secondCard, lockBoard] = [null, null, false];
+      }
+  
+      function restartGame() {
+        matchedPairs = 0;
+        generateCards();
+      }
+  
+      document.addEventListener("DOMContentLoaded", generateCards);
+    </script>
+</body>
 </html>
