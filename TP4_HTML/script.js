@@ -53,6 +53,6 @@ function generateToc(containerId, headers) {
         list.appendChild(listItem);
     });
 
-    toc.innerHTML = '<a href="/index.html" > <h4>&#8962; go home</h3> </a><br><strong>Sommaire :</strong>';
+    toc.innerHTML = '<a href="https://pknzo.github.io/HTML/TP4_HTML/" > <h4>&#8962; go home</h3> </a><br><strong>Sommaire :</strong>';
     toc.appendChild(list);
 }
