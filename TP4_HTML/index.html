@@ -53,16 +53,5 @@
         <h1>Cours JavaScript</h1>
         <p>(Contenu à venir...)</p>
     </section>
-
-    <script>
-        function showContent(section) {
-            document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
-            document.getElementById(section).classList.add('active');
-        }
-        function toggleVisibility(id) {
-            let content = document.getElementById(id);
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
 </body>
 </html>
