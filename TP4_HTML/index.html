@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Cours Web</title>
     <link rel="stylesheet" href="tp4.css">
+    <link rel="stylesheet" href="monCSS.css">
 </head>
 <body>
 
@@ -24,74 +25,49 @@
     
         
     </header>
-    <h1>Bienvenue sur le site des cours Web</h1>
-    <main>
-        <section class="intro">
-            <p>Découvrez les bases du développement Web avec ces cours sur HTML, CSS et JavaScript</p>
-        </section>
+   
+    <nav class="menu">
+        <button onclick="showContent('html')">Cours HTML</button>
+        <button onclick="showContent('css')">Cours CSS</button>
+        <button onclick="showContent('js')">Cours JavaScript</button>
+    </nav>
 
-        <section class="cours">
-            <div class="cours-item">
-                <!-- Remplacer les href par javascript:void(0) pour empêcher la navigation immédiate,
-                     et ajouter l'attribut onclick qui déclenche l'affichage du dropdown -->
-                <a href="javascript:void(0)" onclick="toggleDropdown('dropdown-html')">
-                    <img src="Image/html.png" alt="Cours HTML">
-                </a>
-                <h2>
-                  <a href="javascript:void(0)" onclick="toggleDropdown('dropdown-html')">Cours HTML</a>
-                </h2>
-                <!-- Le menu déroulant (caché par défaut) contenant la liste des fichiers du dossier -->
-                <div id="dropdown-html" class="dropdown" style="display: none;">
-                    <ul>
-                        <li><a href="Docs/cours_HTML/COURS/cours_1_html.html">Cours 1 HTML</a></li>
-                        <li><a href="Docs/cours_HTML/COURS/cours_2_html.html">Cours 2 HTML</a></li>
-                        <li><a href="Docs/cours_HTML/COURS/cours_3_html.html">Cours 3 HTML</a></li>
-                        <!-- Ajoutez ici d'autres liens correspondant aux fichiers présents dans le dossier -->
-                    </ul>
-                </div>
-            </div>
-            
+    <section id="html" class="content active">
+        <h1>Cours HTML</h1>
+        <div class="sommaire" onclick="toggleVisibility('htmlContent')">Afficher/Masquer le sommaire</div>
+        <div id="htmlContent">
+            <h2>Partie 1</h2>
+            <div>[COURS 1 HTML]</div>
+            <h2>Partie 2</h2>
+            <div>[COURS 2 HTML]</div>
+            <h2>Partie 3</h2>
+            <div>[COURS 3 HTML]</div>
+        </div>
+    </section>
 
-            <div class="cours-item">
-                <a href="Docs/cours_CSS/COURS/cours_1_css.html">
-                    <img src="Image/css.png" alt="Cours CSS">
-                </a>
-                <h2><a href="Docs/css.html">Cours CSS</a></h2>
-            </div>
+    <section id="css" class="content">
+        <h1>Cours CSS</h1>
+        <div class="sommaire" onclick="toggleVisibility('cssContent')">Afficher/Masquer le sommaire</div>
+        <div id="cssContent">
+            <h2>Partie 1</h2>
+            <div>[COURS 1 CSS]</div>
+        </div>
+    </section>
 
-            <div class="cours-item">
-                <a href="Docs/cours_JS/COURS/cours_1_js.html">
-                    <img src="Image/js.png" alt="Cours JavaScript">
-                </a>
-                <h2><a href="Docs/js.html">Cours JavaScript</a></h2>
-            </div>
-        </section>
-
-        <section class="sommaire">
-            <h2>Sommaire des cours</h2>
-            <ul>
-                <li><a href="Docs/html.html">Cours HTML</a></li>
-                <li><a href="Docs/cours_CSS/COURS/cours_1_css.html">Cours CSS</a></li>
-                <li><a href="Docs/cours_JS/COURS/cours_1_js.html">Cours JavaScript</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 - Site des cours Web</p>
-    </footer>
+    <section id="js" class="content">
+        <h1>Cours JavaScript</h1>
+        <p>(Contenu à venir...)</p>
+    </section>
 
     <script>
-        function toggleDropdown(id) {
-          var dropdown = document.getElementById(id);
-          // Si le dropdown est visible, on le masque, sinon on l'affiche
-          if (dropdown.style.display === "block") {
-            dropdown.style.display = "none";
-          } else {
-            dropdown.style.display = "block";
-          }
+        function showContent(section) {
+            document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
+        function toggleVisibility(id) {
+            let content = document.getElementById(id);
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
         }
     </script>
-        
-
-</body></html>
+</body>
+</html>
