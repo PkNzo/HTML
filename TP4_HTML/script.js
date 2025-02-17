@@ -52,5 +52,6 @@ function generateToc(containerId, headers) {
         listItem.appendChild(link);
         list.appendChild(listItem);
     });
-
+toc.innerHTML = '<a href="/index.html" > <h4>&#8962; go home</h3> </a><br><strong>Sommaire :</strong>';
+    toc.appendChild(list);
 }
