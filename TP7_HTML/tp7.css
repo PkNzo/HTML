@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <title>TP_WEB</title>
-     <style>
 *{
     box-sizing: border-box;
 }
@@ -14,7 +7,6 @@ body{
     font-family: arial, sans-serif;
     font-size: 16px;
     line-height: 22px;
-
 }
 /* En-tete*/
 a{
@@ -76,29 +68,3 @@ header li:hover .sous_menu{
 main.wrapper{
     margin-top: 30px;
 }
-
-
-     </style>
-</head>
-    <body>
-        <header>
-                <ul>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/" title="Acceuil">Acceuil</a></li>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/TP3_HTML/" title="TP3">TP3</a> </li>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/TP4_HTML/" title="TP4">TP4</a> </li>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/TP5_HTML/" title="TP5">TP5</a></li>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/TP6_HTML/" title="TP6">TP6</a></li>
-                    <li> 
-                        <a href="https://pknzo.github.io/HTML/TP7_HTML/" title="TP6">TP7</a></li>
-                        
-                    
-                </ul>
-        </header>
-    </body>
-
-</html> 
