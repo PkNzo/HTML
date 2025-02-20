@@ -1,7 +1,6 @@
 /*TP3*/
 body { 
     font-family: Arial, sans-serif; margin: 20px; 
-    background-image: url(Fond_accueil.jpg);
 }
 h1 { color: black; font-weight: bold; font-size: 2em; }
 h2 { color: black; font-weight: bold; font-size: 1.75em; }
