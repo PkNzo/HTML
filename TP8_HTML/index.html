@@ -30,95 +30,117 @@
             </ul>
         </header>
 
-
-  <!-- En-tête -->
-  <header>
-    <h1>TP8 - JavaScript Interactif</h1>
-  </header>
-
-  <div class="container">
-    <!-- Sommaire -->
-    <nav id="tp8-toc">
-      <h2>Sommaire</h2>
-      <ul id="tp8-toc-list">Chargement...</ul>
-    </nav>
-
-    <!-- Exercice 1 -->
-    <section id="ex1" class="section">
-      <h2>Exercice 1 : Surface d'un rectangle</h2>
-      <p>Entrez deux entiers (X et Y), puis affichez leur produit.</p>
-      <button onclick="ex1()">Lancer l'exercice</button>
-    </section>
-
-    <!-- Exercice 2 -->
-    <section id="ex2" class="section">
-      <h2>Exercice 2 : Confirmation avant calcul</h2>
-      <p>Confirmez les valeurs avant d'afficher la surface.</p>
-      <button onclick="ex2()">Lancer l'exercice</button>
-    </section>
-
-    <!-- Exercice 3 -->
-    <section id="ex3" class="section">
-      <h2>Exercice 3 : Saisie sécurisée</h2>
-      <p>Les valeurs doivent être des nombres positifs.</p>
-      <button onclick="ex3()">Lancer l'exercice</button>
-    </section>
-
-    <!-- Exercice 4 -->
-    <section id="ex4" class="section">
-      <h2>Exercice 4 : Affichage dans la page</h2>
-      <button onclick="ex4()">Lancer l'exercice</button>
-      <div class="result-zone" id="res-ex4">Résultat affiché ici</div>
-    </section>
-
-    <!-- Exercice 5 -->
-    <section id="ex5" class="section">
-      <h2>Exercice 5 : Fonction rect()</h2>
-      <button onclick="ex5()">Lancer l'exercice</button>
-      <div class="result-zone" id="res-ex5">Résultat affiché ici</div>
-    </section>
-
-    <!-- Exercice 6 -->
-    <section id="ex6" class="section">
-      <h2>Exercice 6 : Table de multiplication</h2>
-      <button onclick="ex6()">Lancer l'exercice</button>
-      <div class="result-zone" id="res-ex6"></div>
-    </section>
-
-    <!-- Exercice 7 -->
-    <section id="ex7" class="section">
-      <h2>Exercice 7 : Devis cimenterie</h2>
-      <button onclick="ex7()">Lancer l'exercice</button>
-      <div class="result-zone" id="res-ex7"></div>
-    </section>
-  </div>
-
-  <footer>
-    <p>TP8 - Interface améliorée</p>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var tocList = document.getElementById("tp8-toc-list");
-      var sections = document.querySelectorAll("section[id^='ex']");
-      tocList.innerHTML = "";
-      sections.forEach(function(section) {
-        var li = document.createElement("li");
-        var h2 = section.querySelector("h2");
-        if (h2) {
-          var a = document.createElement("a");
-          a.textContent = h2.textContent;
-          a.href = "#" + section.id;
-          li.appendChild(a);
-          tocList.appendChild(li);
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-
-
-    </body>
-
-</html>
+        
+          <!-- En-tête -->
+          <header>
+            TP JavaScript - Interactions et Calculs
+          </header>
+        
+          <div class="container">
+            <!-- Sommaire -->
+            <nav id="tp-toc">
+              <h2>Sommaire</h2>
+              <ul id="tp-toc-list">Chargement en cours...</ul>
+            </nav>
+        
+            <!-- EXERCICES -->
+            <section id="ex1" class="section">
+              <h2>Calcul de la surface d'un rectangle</h2>
+              <p>Entrez deux valeurs (X et Y) pour obtenir la surface.</p>
+              <button onclick="ex1()">Démarrer</button>
+            </section>
+        
+            <section id="ex2" class="section">
+              <h2>Confirmation des valeurs X et Y</h2>
+              <p>Confirmez les valeurs avant d'afficher la surface.</p>
+              <button onclick="ex2()">Démarrer</button>
+            </section>
+        
+            <section id="ex3" class="section">
+              <h2>Saisie contrôlée</h2>
+              <p>Assurez-vous que les valeurs sont des nombres positifs.</p>
+              <button onclick="ex3()">Démarrer</button>
+            </section>
+        
+            <section id="ex4" class="section">
+              <h2>Afficher le résultat dans la page</h2>
+              <p>Le résultat sera affiché directement ici.</p>
+              <button onclick="ex4()">Démarrer</button>
+              <div class="result-zone" id="res-ex4"></div>
+            </section>
+        
+            <section id="ex5" class="section">
+              <h2>Calcul via une fonction</h2>
+              <p>Le calcul sera effectué par une fonction spécifique.</p>
+              <button onclick="ex5()">Démarrer</button>
+              <div class="result-zone" id="res-ex5"></div>
+            </section>
+          </div>
+        
+          <footer>
+            <p>Page réalisée par Enzo MARION.</p>
+          </footer>
+        
+          <!-- Script pour le sommaire -->
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var tocList = document.getElementById("tp-toc-list");
+              var sections = document.querySelectorAll("section[id^='ex']");
+              tocList.innerHTML = "";
+              sections.forEach(function(section) {
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.textContent = section.querySelector("h2").textContent;
+                a.href = "#" + section.id;
+                li.appendChild(a);
+                tocList.appendChild(li);
+              });
+            });
+        
+            function ex1() {
+              let x = prompt("Entrez X :");
+              let y = prompt("Entrez Y :");
+              let result = parseInt(x) * parseInt(y);
+              alert("Surface = " + result);
+            }
+        
+            function ex2() {
+              let x, y, confirmed = false;
+              while (!confirmed) {
+                x = prompt("Entrez X :");
+                y = prompt("Entrez Y :");
+                confirmed = confirm("Confirmer X=" + x + " et Y=" + y + " ?");
+              }
+              alert("Surface = " + (x * y));
+            }
+        
+            function ex3() {
+              let x, y;
+              while (true) {
+                x = parseInt(prompt("X (>= 0) :"));
+                y = parseInt(prompt("Y (>= 0) :"));
+                if (!isNaN(x) && !isNaN(y) && x >= 0 && y >= 0) break;
+                alert("Erreur : valeurs incorrectes.");
+              }
+              alert("Surface = " + (x * y));
+            }
+        
+            function ex4() {
+              let x = parseInt(prompt("X :"));
+              let y = parseInt(prompt("Y :"));
+              let result = x * y;
+              document.getElementById("res-ex4").innerHTML = "Résultat : " + result;
+            }
+        
+            function ex5() {
+              function calc(x, y) { return x * y; }
+              let x = parseInt(prompt("X :"));
+              let y = parseInt(prompt("Y :"));
+              let result = calc(x, y);
+              document.getElementById("res-ex5").innerHTML = "Surface : " + result;
+            }
+          </script>
+        
+        </body>
+        </html>
+        
