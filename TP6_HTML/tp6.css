@@ -68,3 +68,45 @@ header li:hover .sous_menu{
 main.wrapper{
     margin-top: 30px;
 }
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #ddd;
+}
+img {
+    width: 50px;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+}
+code {
+    background-color: #f4f4f4;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #ccc;
+}
