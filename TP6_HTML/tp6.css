@@ -68,45 +68,61 @@ header li:hover .sous_menu{
 main.wrapper{
     margin-top: 30px;
 }
-table {
-    width: 50%;
-    border-collapse: collapse;
-    margin: 20px auto;
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
 }
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
 th, td {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
 }
+
 th {
-    background-color: #ddd;
+    background-color: #555;
+    color: white;
 }
-img {
+
+.zoneA {
+    background-color: #ffeb99;
+}
+
+.zoneB {
+    background-color: #b3e6ff;
+}
+
+.zoneC {
+    background-color: #c6f5c6;
+}
+
+.script-table img {
     width: 50px;
-    cursor: pointer;
+    height: auto;
 }
-a {
+
+.script-table a {
+    color: #007bff;
     text-decoration: none;
-    color: blue;
 }
-a:hover {
-    text-decoration: underline;
+
+.calendar th {
+    background-color: #444;
+    color: white;
 }
-code {
-    background-color: #f4f4f4;
-    padding: 2px 5px;
-    font-family: monospace;
-}
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-td, th {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-}
-th {
-    background-color: #ccc;
+
+.calendar td {
+    background-color: #fff;
 }
