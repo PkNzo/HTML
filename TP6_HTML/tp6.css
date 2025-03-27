@@ -165,8 +165,7 @@ th {
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover {
