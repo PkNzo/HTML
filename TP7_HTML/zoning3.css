@@ -1,0 +1,36 @@
+/* Zoning 3 */
+.zone-haut {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+
+.gauche {
+    background-color: #40a497;
+    color: black;
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.droite {
+    background-color: #9a40a4;
+    color: black;
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.zone-bas {
+    background-color: #f0c000;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}

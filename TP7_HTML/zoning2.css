@@ -1,0 +1,39 @@
+/* Zoning 2 */
+.zone-haut {
+    background-color: #ff5555;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    height: 125px; 
+    box-sizing: border-box;
+}
+
+.conteneur {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 100px); 
+}
+
+.zone-gauche {
+    background-color: #5586ff;
+    color: black;
+    width: 20%;
+    padding: 20px;
+    height: 100%;
+}
+
+.zone-milieu {
+    background-color: #55d87b;
+    color: black;
+    width: 60%;
+    padding: 20px;
+    height: 100%;
+}
+
+.zone-droite {
+    background-color: #9f6f3f;
+    color: black;
+    width: 20%;
+    padding: 20px;
+    height: 100%;
+}

@@ -1,0 +1,44 @@
+/* Zoning 5 */
+.container {
+    display: grid;
+    grid-template-rows: 10vh 5vh auto 10vh; 
+    grid-template-columns: 2% 48% 48% 2%; /* Ajout d'une colonne pour les divisions A/B et C/D */
+    height: 100vh;
+    width: 100vw;
+    border: 3px solid black;
+}
+
+.top, .menu, .bottom {
+    grid-column: span 4;
+    padding: 1vh;
+}
+
+.main {
+    grid-column: 2 / 4; /* Occupe les 2 colonnes du milieu */
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* 2 lignes égales pour A et C, B et D */
+    grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+    padding: 1vh;
+    height: 100%;
+    margin-top: 1%;
+}
+
+
+
+.a { background-color: #32a7a0; }
+.b { background-color: #d69f1b; }
+.c { background-color: #b1b2d8; }
+.d { background-color: #1217f2; }
+
+
+#id-M {
+    background-color: #9b59b6;
+    
+}
+#id-HB {
+    background-color: #1abc9c;
+}
+#id-HB2 {
+     background-color: #1abc9c;
+     margin-top: 2%;
+}
